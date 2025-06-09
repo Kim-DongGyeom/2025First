@@ -1,0 +1,14 @@
+[
+  {
+    "User": {
+      "UserImgURL": "/boardImg.jpeg",
+      "LikeUserName": "Liked User",
+      "id": 1
+    },
+    "Board": {
+      "CreateUser": "Board Created User",
+      "contents": "この鳥めっちゃ可愛い😍",
+      "commentCnt": 40
+    }
+  }
+]
