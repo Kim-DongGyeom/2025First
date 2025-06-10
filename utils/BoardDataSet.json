@@ -1,14 +1,41 @@
 [
   {
     "User": {
+      "UserImgURL": "/boardImg1.jpeg",
+      "LikeUserName": "Liked User 0",
+      "id": 0
+    },
+    "Board": {
+      "CreateUser": "Board Created User 0",
+      "contents": "働きたくねーー😞😞😞",
+      "commentCnt": 40,
+      "BoardImgURL": "/boardImg1.jpeg"
+    }
+  },
+  {
+    "User": {
       "UserImgURL": "/boardImg.jpeg",
-      "LikeUserName": "Liked User",
+      "LikeUserName": "Liked User 1",
       "id": 1
     },
     "Board": {
-      "CreateUser": "Board Created User",
+      "CreateUser": "Board Created User 1",
       "contents": "この鳥めっちゃ可愛い😍",
-      "commentCnt": 40
+      "commentCnt": 40,
+      "BoardImgURL": "/boardImg.jpeg"
+    }
+  },
+  {
+    "User": {
+      "UserImgURL": "/boardImg.jpeg",
+      "LikeUserName": "Liked User 2",
+      "id": 2
+    },
+    "Board": {
+      "CreateUser": "Board Created User 2",
+      "contents": "この鳥めっちゃ可愛い😍",
+      "commentCnt": 40,
+      "BoardImgURL": "/boardImg.jpeg"
     }
   }
 ]

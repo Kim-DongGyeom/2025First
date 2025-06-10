@@ -11,15 +11,15 @@ interface Props {
 
 export default function HeaderNav({ items }: Props) {
   return (
-    <div className='flex w-1/2'>
+    <div className='flex w-3/4'>
       {/* logo */}
-      <div className='flex items-center space-x-8'>
+      <div className='flex items-center space-x-8 mr-8'>
         <Link href='/' className='text-xl font-bold'>
           board
         </Link>
       </div>
       {/* Navigation Bar */}
-      <nav className='flex items-center ml-10'>
+      <nav className='flex items-center'>
         <ul className='flex font-bold'>
           {items.map((item, idx) => (
             <li key={item.name + idx}>

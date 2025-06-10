@@ -4,19 +4,23 @@
     "name": "ホーム"
   },
   {
-    "href": "/test",
+    "href": "/Map",
     "name": "地図"
   },
   {
-    "href": "/test1",
+    "href": "/Chat",
     "name": "チャット"
   },
   {
-    "href": "/test1",
+    "href": "/Album",
     "name": "アルバム"
   },
   {
-    "href": "/test1",
+    "href": "/Profile",
     "name": "プロファイル"
+  },
+  {
+    "href": "/test",
+    "name": "test"
   }
 ]
