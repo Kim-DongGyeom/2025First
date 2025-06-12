@@ -1,27 +1,39 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import UserCard from '../User/UserCard';
 // Components
 // DataSet
 import BoardData from '../../utils/BoardDataSet.json';
+import { useState } from 'react';
 
 export default function board() {
   const BoardInfo = BoardData;
-  console.log('Boardcard: ', BoardInfo);
+  //   console.log('Boardcard: ', BoardInfo);
 
-  BoardInfo.map((data, index) => {
-    console.log(index, ':', data);
-    // console.log(data.User.id);
-  });
+  //   BoardInfo.map((data, index) => {
+  //     console.log(index, ':', data);
+  //     // console.log(data.User.id);
+  //   });
+
+  const [comment, Setcomment] = useState<String>('');
+
+  const OnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    Setcomment(e.target.value);
+  };
 
   return (
-    <div className=''>
+    <div>
       {BoardInfo.map((data, index) => (
-        <div className='min-w-96 border-2 rounded-2xl p-4 px-5 mb-4'>
+        <div
+          className='min-w-96 border-2 rounded-2xl p-4 px-5 mb-4'
+          key={index}
+        >
           {/* 게시물 카드 ~ */}
           <div className='flex justify-between items-center mb-2'>
             {/* user프로필 */}
-            <UserCard items={data.User} />
+            <UserCard items={data.User} key={index} />
             <div>詳細</div>
           </div>
           {/* 게시물 사진 */}
@@ -44,9 +56,10 @@ export default function board() {
           </div>
           {/* 좋아요　갯수 */}
           <div className='font-bold my-2'>
-            <Link href={`/user$id`}>いいね！：</Link>
+            <Link href={`/user$id`}>いいね！</Link>
+            <label>：</label>
             <Link className='mr-3' href={`/user$id`}>
-              {data.User.LikeUserName}
+              {data.Comment.LikeUserName}
             </Link>
             <Link className='' href={`/user$id`}>
               他
@@ -66,11 +79,12 @@ export default function board() {
             </Link>
           </div>
           {/* 댓글 작성 */}
-          <div className='text-gray-500 mr-3 w-full'>
+          <div className='mr-3 w-full'>
             <input
-              className='w-full'
+              className='w-full focus:outline-none focus:ring-0'
               type='text'
               placeholder='コメントを追加...'
+              onChange={OnChange}
             />
           </div>
         </div>

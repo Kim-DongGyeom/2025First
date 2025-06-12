@@ -10,8 +10,9 @@ import Image from 'next/image';
 
 export default function board() {
   const item = {
+    UserImgURL: '/boardImg1.jpeg',
+    UserName: 'LikeUserName',
     id: 0,
-    url: '/boardImg1.jpeg',
   };
   const [test, SetTest] = useState<boolean>(false);
   const onClick = {
@@ -20,20 +21,22 @@ export default function board() {
       console.log(test);
     },
   };
+
   return (
-    <div className='flex items-center justify-between border p-3 rounded-2xl mb-3 w-full'>
+    <div className='flex items-center justify-between border-2 p-3 rounded-2xl mb-3 w-full'>
       {/* BoardCreate Btn */}
-      {/* UserImg */}
-      <div className='border-2 rounded-full mr-3'>
-        <Link href={`/user/${item.id}`}>
-          <Image
-            className='rounded-full'
-            src={item.url}
-            alt='UserImg'
-            width={40}
-            height={40}
-          />
-        </Link>
+      {/* User IMG */}
+      <div className='flex items-center'>
+        <div className='border rounded-full overflow-hidden mr-2 w-12 h-12 relative'>
+          <Link href={`/user/${item.id}`}>
+            <Image
+              className='object-cover'
+              src={item.UserImgURL}
+              alt='UserImg'
+              fill
+            />
+          </Link>
+        </div>
       </div>
       {/* インプット */}
       <div

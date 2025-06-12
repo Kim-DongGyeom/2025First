@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import UserIcon from './UserIcon';
 
 type UserItem = {
   UserImgURL: string;
-  LikeUserName: string;
+  UserName: string;
   id: number;
 };
 
@@ -14,20 +15,10 @@ interface Props {
 export default function UserCard({ items }: Props) {
   return (
     <div className='flex items-center'>
-      {/* User IMG */}
-      <div className='border rounded-full items-center  mr-2'>
-        <Link href={`/user/${items.id}`}>
-          <Image
-            className='rounded-full'
-            src={items.UserImgURL}
-            alt='UserImg'
-            width={40}
-            height={40}
-          />
-        </Link>
-      </div>
+      {/* User Icon */}
+      <UserIcon item={items} />
       {/* User Name */}
-      <Link href={`/user/${items.id}`}>{items.LikeUserName}</Link>
+      <Link href={`/user/${items.id}`}>{items.UserName}</Link>
     </div>
   );
 }
