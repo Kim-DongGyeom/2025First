@@ -6,8 +6,10 @@ import BoardCard from './BoardCard';
 import BoardCreate from './BoardCreate';
 
 export default function board() {
-  const BoardInfo = BoardData;
-  console.log(BoardInfo);
+  //   const BoardInfo = BoardData;
+  //   console.log('---/components/Board/page---');
+  //   console.log(BoardInfo);
+  //   console.log('---/components/Board/page---');
 
   return (
     <div className=''>

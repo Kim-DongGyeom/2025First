@@ -28,7 +28,7 @@ export default function board() {
       {/* User IMG */}
       <div className='flex items-center'>
         <div className='border rounded-full overflow-hidden mr-2 w-12 h-12 relative'>
-          <Link href={`/user/${item.id}`}>
+          <Link href={`/User/${item.id}`}>
             <Image
               className='object-cover'
               src={item.UserImgURL}

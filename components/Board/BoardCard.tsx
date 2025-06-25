@@ -17,10 +17,23 @@ export default function board() {
   //     // console.log(data.User.id);
   //   });
 
-  const [comment, Setcomment] = useState<String>('');
+  const [comment, SetComment] = useState<string>('');
 
-  const OnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    Setcomment(e.target.value);
+  const EvntHandle = {
+    handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === 'Enter') {
+        console.log('入力したコメント:', comment);
+        SetComment('');
+      }
+    },
+
+    OnChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+      SetComment(e.target.value);
+    },
+
+    OnClick: () => {
+      console.log(comment);
+    },
   };
 
   return (
@@ -48,11 +61,11 @@ export default function board() {
           {/* 게시물 관련 버튼 */}
           <div className='flex items-center justify-between my-2'>
             <div className='flex items-center'>
-              <div className='pr-2'>いいね</div>
-              <div className='pr-2'>コメント</div>
-              <div className='pr-2'>共有</div>
+              <div className='pr-2 cursor-pointer'>いいね</div>
+              <div className='pr-2 cursor-pointer'>コメント</div>
+              <div className='pr-2 cursor-pointer'>共有</div>
             </div>
-            <div className=''>保存</div>
+            <div className='cursor-pointer'>保存</div>
           </div>
           {/* 좋아요　갯수 */}
           <div className='font-bold my-2'>
@@ -84,7 +97,9 @@ export default function board() {
               className='w-full focus:outline-none focus:ring-0'
               type='text'
               placeholder='コメントを追加...'
-              onChange={OnChange}
+              onChange={EvntHandle.OnChange}
+              onKeyDown={EvntHandle.handleKeyDown}
+              value={comment}
             />
           </div>
         </div>

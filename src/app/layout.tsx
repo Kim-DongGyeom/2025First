@@ -13,7 +13,7 @@ export default function RootLayout({
     <html>
       <body>
         <Header />
-        {children}
+        <div className='flex justify-center'>{children}</div>
       </body>
     </html>
   );

@@ -18,7 +18,7 @@ export default function UserCard({ items }: Props) {
       {/* User Icon */}
       <UserIcon item={items} />
       {/* User Name */}
-      <Link href={`/user/${items.id}`}>{items.UserName}</Link>
+      <Link href={`/User/${items.id}`}>{items.UserName}</Link>
     </div>
   );
 }
